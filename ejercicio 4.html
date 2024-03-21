@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     function CantidaddiasAnioNuevo(){
+
+        let fechaActual = new Date();
+        let añoActual = fechaActual.getFullYear();
+        let proximoAñoNuevo = new Date(añoActual + 1, 0, 1);
+        let diferenciaMilisegundos = proximoAñoNuevo - fechaActual;
+        let diasFaltantes = Math.ceil(diferenciaMilisegundos / (1000 * 60 * 60 * 24));
+        let x = "Faltan " + diasFaltantes + " días para el año nuevo.";
+        document.write(x);
+    }
+    
+    function CantidadMesesCampeon(){
+        let date = new Date();
+ let mundial = new Date(2022,11,18);
+ let months = (date.getFullYear() - mundial.getFullYear()) * 12;
+     months -= mundial.getMonth();
+     months += date.getMonth();
+     return months;
+        
+}
+function CantidadAniosNacimiento(){
+let date = new Date();
+ let birthday = new Date(2005,5,14);
+ var ageDifMs = Date.now() - birthday;
+ var ageDate = new Date(ageDifMs);
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
+                    }
+
+CantidaddiasAnioNuevo();
+
+document.write("Cantidad de Meses de Argentina como Campeona " + CantidadMesesCampeon()+"<br>");
+    
+ document.write("Años desde mi nacimiento " + CantidadAniosNacimiento()+"<br>");
+
+
+
+
+</script>
+</body>
+</html>
